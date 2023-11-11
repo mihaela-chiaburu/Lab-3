@@ -1,23 +1,25 @@
 package PolimorfismCompilare;
+import PolimorfismRuntime.Integral;
 
+import java.util.List;
 public class Main {
     public static void main(String[] args){
         CreatureEncyclopedia dragon = new CreatureEncyclopedia();
         CreatureEncyclopedia elf = new CreatureEncyclopedia("Elf","Thranduil");
         CreatureEncyclopedia kitsune = new CreatureEncyclopedia("Kitsune","Yuki", 15);
         CreatureEncyclopedia chimera = new CreatureEncyclopedia("Chimera","Manticora", 1500000d);
-        CreatureEncyclopedia nymph = new CreatureEncyclopedia("Nymph", "Daphne", "Healing Powers");
 
-        System.out.println(dragon);
-        System.out.println(elf);
-        System.out.println(kitsune);
-        System.out.println(chimera);
-        System.out.println(nymph);
+        List<CreatureEncyclopedia> list = List.of(dragon, elf, kitsune, chimera);
+
+        for(CreatureEncyclopedia creature: list){
+            System.out.println(creature);
+        }
+        System.out.println();
 
         chimera.fightCreature(15000);
         //kopim ultu + baffs
-        chimera.fightCreature(18000);
+        chimera.fightCreature(15000d, 3000);
         //opacikiiii ultttaaaa
-        chimera.fightCreature(1300000);
+        chimera.fightCreature(15000d, 1285000);
     }
 }

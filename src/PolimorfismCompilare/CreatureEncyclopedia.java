@@ -6,6 +6,7 @@ public class CreatureEncyclopedia {
     private int level;
     private String ability;
     private double health;
+    private double buff;
 
     public CreatureEncyclopedia(){
     }
@@ -22,11 +23,6 @@ public class CreatureEncyclopedia {
         this.classCreature = classCreature;
         this.creatureName = creatureName;
         this.health = health;
-    }
-    public CreatureEncyclopedia(String classCreature, String creatureName, String ability){
-        this.classCreature = classCreature;
-        this.creatureName = creatureName;
-        this.ability = ability;
     }
 
     public String getCreatureName() {
@@ -61,7 +57,7 @@ public class CreatureEncyclopedia {
         this.health = health;
     }
 
-    public void fightCreature(int damage) {
+    public double fightCreature(int damage) {
         if (health > 0) {
             System.out.println(creatureName + " is attacking!");
             health -= damage;
@@ -72,6 +68,21 @@ public class CreatureEncyclopedia {
         } else {
             System.out.println(creatureName + " is already defeated. No need to fight.");
         }
+        return getHealth();
+    }
+    public double fightCreature(double damage, double buff) {
+        damage+=buff;
+        if (health > 0) {
+            System.out.println(creatureName + " is attacking!");
+            health -= damage;
+            if (health < 0) {
+                health = 0;
+            }
+            System.out.println(creatureName + " received buffed damage" + damage + ". Current health: " + health);
+        } else {
+            System.out.println(creatureName + " is already defeated. No need to fight.");
+        }
+        return damage * getLevel() + buff;
     }
 
     @Override
