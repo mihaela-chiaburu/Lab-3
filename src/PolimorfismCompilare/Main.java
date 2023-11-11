@@ -1,5 +1,4 @@
 package PolimorfismCompilare;
-import PolimorfismRuntime.Integral;
 
 import java.util.List;
 public class Main {
