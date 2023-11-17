@@ -11,7 +11,7 @@ public class Main {
         System.out.println(thief.showInfo());
         System.out.println(cleric.showInfo());
 
-        /*knight.increaseDamage(100);
+        /*((Knight) knight).increaseDamage(100);
         thief.increaseSpeed(20);
         cleric.increaseHealingPower(200);
 

@@ -4,7 +4,7 @@ public class Integral {
     private double limitSup;
     private double limitInf;
 
-    Integral(double limitSup, double limitInf) {
+    public Integral(double limitSup, double limitInf) {
         this.limitSup = limitSup;
         this.limitInf = limitInf;
     }
@@ -25,7 +25,7 @@ public class Integral {
         this.limitInf = limitInf;
     }
 
-    double calculateIntegral() {
+    public double calculateIntegral() {
         return 0.0;
     }
 
